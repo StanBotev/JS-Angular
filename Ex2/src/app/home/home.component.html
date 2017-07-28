@@ -1,0 +1,26 @@
+<ul>
+  <a href='{{gitHubProfileInfo?.avatar_url}}'>Avatar</a>
+  <li>Company: <font color='green'>{{gitHubProfileInfo?.company}}</font></li>
+  <li>Bio: <font color='green'>{{gitHubProfileInfo?.bio || 'No bio for this user'}}</font> </li>
+  <li>Location: <font color='green'>{{gitHubProfileInfo?.location}}</font></li>
+  <li>Repos: <font color='green'>{{gitHubProfileInfo?.public_repos}}</font></li>
+  <li>Followers: <font color='green'>{{gitHubProfileInfo?.followers}}</font></li>
+</ul>
+<div>
+  <button (click)='getFollowersData()'>Followers Data</button>
+  <follower *ngFor='let follower of gitHubFollowersInfo'
+      [follower]='follower'></follower>
+</div>
+<div>
+  <button (click)='getRepositoriesData()'>Repositories Data</button>
+  <br/>
+  <repository *ngFor='let repository of gitHubRepositoriesInfo'
+      [repository]='repository'>
+    </repository>
+</div>
+<!-- <div>
+  <button (click)='getContributorsData()'>Contributors Data</button>
+  <br/>
+  <contributor *ngFor='let contributor of gitHubContributorsInfo'
+      [contributor]='contributor'></contributor>
+</div> -->
